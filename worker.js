@@ -1,4 +1,17 @@
+const ICON = "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";
+
 addEventListener("fetch", (event) => {
+  const path = new URL(event.request.url).pathname;
+  if (path === "/favicon.ico" || path === "/favicon.png") {
+    const bytes = Uint8Array.from(atob(ICON), (c) => c.charCodeAt(0));
+    event.respondWith(new Response(bytes, {
+      headers: {
+        "content-type": "image/png",
+        "cache-control": "public, max-age=86400"
+      }
+    }));
+    return;
+  }
   event.respondWith(new Response(PAGE, {
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -13,6 +26,7 @@ const PAGE = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blaine Yeager</title>
+<link rel="icon" href="/favicon.png" type="image/png">
 <style>
   html, body { margin: 0; height: 100%; background: #141311; color: #efece6; }
   body { font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif; overflow: hidden; }
